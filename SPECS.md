@@ -125,7 +125,7 @@ Function calls:
 
 Short-hand *(return is implied)*:
 ```
-[visibility-modifier] func <identifier>([<var-type> <identifier>, ..]) : [return-type] => <expr>;
+[visibility-modifier] func <identifier>([<var-type> <identifier>, ..]) : [return-type] -> <expr>;
 ```
 
 ## 7. Structs and classes
