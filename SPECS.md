@@ -7,9 +7,9 @@ Specifications for the Glue language.
 3. [Expressions](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#3-expressions)
 4. [Code blocks](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#4-code-blocks)
 5. [Visibility modifiers](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#5-visibility-modifiers)
-6. [Functions](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#5-visibility-modifiers)
-7. [Structs and classes](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#5-visibility-modifiers)
-8. [Conditionals and loops](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#5-visibility-modifiers)
+6. [Functions](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#6-functions)
+7. [Structs and classes](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#7-structs-and-classes)
+8. [Conditionals and loops](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#8-conditionals-and-loops)
 
 ## 1. Built-in types
 name | description
