@@ -2,14 +2,14 @@
 Specifications for the Glue language.
 
 ## Table of contents
-1. Built-in types
-2. Statements
-3. Expressions
-4. Code blocks
-5. Visibility modifiers
-6. Functions
-7. Structs and classes
-8. Conditionals and loops
+1. [Built-in types](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#1-built-in-types)
+2. [Statements](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#2-statements)
+3. [Expressions](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#3-expressions)
+4. [Code blocks](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#4-code-blocks)
+5. [Visibility modifiers](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#5-visibility-modifiers)
+6. [Functions](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#5-visibility-modifiers)
+7. [Structs and classes](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#5-visibility-modifiers)
+8. [Conditionals and loops](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#5-visibility-modifiers)
 
 ## 1. Built-in types
 name | description
@@ -47,17 +47,26 @@ char   | special character type that supports UTF-8? TODO
 string | UTF-8 encoded string
 
 ## 2. Statements
-Variable definition:<br>
-`<var-type> <identifier> = <expr>;`
+Variable definition:
+```
+<var-type> <identifier> = <expr>;
+```
 
-Variable assignment:<br>
-`<identifier> = <expr>;`
+Variable assignment:
+```
+<identifier> = <expr>;
+```
 
-
+Return statement:
+```glue
+return <expr>;
+```
 
 ## 3. Expressions
-Basic expression syntax:<br>
-`<lhs-expr> [<binary_op> <rhs-expr>]`
+Basic expression syntax:
+```
+<lhs-expr> [<binary_op> <rhs-expr>]
+```
 
 Possible types of expressions:
 1. Literals
@@ -74,29 +83,47 @@ Possible types of binary operations:
 ## 4. Code blocks
 Code blocks are defined as a list of statements, starting with `{` and ending with `}`.
 Example:
-`{ int32 a = 8; }`
+```glue
+{
+	int32 a = 8;
+	int32 b = a;
+	a = 5;
+}
+```
+
+Code blocks can also be nested inside each other, allowing you to limit scope whenever you please.
+Example:
+```glue
+{
+	int32 a = 8;
+	{
+		int32 b = a;
+	}
+	b = 5; //Not possible, b is out of scope here
+}
+```
 
 ## 5. Visibility modifiers
 Everything is private by default, where applicable.
 To make something public, simply specify `public` as the visibility modifier.
 
 ## 6. Functions
-Function declaration:<br>
+Function declaration:
 ```
 [visibility-modifier] func <identifier>([<var-type> <identifier>, ..]) {}
 ```
-Return type:<br>
+Return type:
 ```
 [visibility-modifier] func <identifier>([<var-type> <identifier>, ..]) : <var-type> //Single return
 [visibility-modifier] func <identifier>([<var-type> <identifier>, ..]) : (<var-type> <identifier>, ..) //Multiple named returns
 ```
 
-Function calls:<br>
+Function calls:
 ```
 <func-identifier>([<var-ref>, ..])
 ```
 
-Short-hand *(return is implied)*:<br>
+Short-hand *(return is implied)*:
 ```
 [visibility-modifier] func <identifier>([<var-type> <identifier>, ..]) : [return-type] => <expr>;
 ```
