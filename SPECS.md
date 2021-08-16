@@ -2,7 +2,7 @@
 Specifications for the Glue language.
 
 ## Table of contents
-0. [Naming conventions and other preferences](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#0)
+0. [Naming conventions and other preferences](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#0-naming-conventions-and-other-preferences)
 1. [Built-in types](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#1-built-in-types)
 2. [Statements](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#2-statements)
 3. [Expressions](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#3-expressions)
