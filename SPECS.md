@@ -157,11 +157,11 @@ Classes are simply structs that have had functions implemented on them. Syntax +
 ```glue
 struct Example {
 	i32 hidden;
+}
 
-	impl {
-		pub func reveal_hidden(ref self) : i32 {
-			return self.hidden;
-		}
+impl {
+	pub func reveal_hidden(ref self) : i32 {
+		return self.hidden;
 	}
 }
 ```
