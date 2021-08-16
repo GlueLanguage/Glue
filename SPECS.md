@@ -89,8 +89,8 @@ Code blocks are defined as a list of statements, starting with `{` and ending wi
 Example:
 ```glue
 {
-	i32 a = 8;
-	i32 b = a;
+	u32 a = 8;
+	u32 b = a;
 	a = 5;
 }
 ```
@@ -99,9 +99,9 @@ Code blocks can also be nested inside each other, allowing you to limit scope wh
 Example:
 ```glue
 {
-	i32 a = 8;
+	u32 a = 8;
 	{
-		i32 b = a;
+		u32 b = a;
 	}
 	b = 5; //Not possible, b is out of scope here
 }
@@ -138,8 +138,8 @@ Struct syntax + example:
 
 ```glue
 struct Example {
-	i32 hidden;
-	pub i32 visible;
+	u32 hidden;
+	pub u32 visible;
 }
 ```
 
@@ -156,11 +156,11 @@ Classes are simply structs that have had functions implemented on them. Syntax +
 
 ```glue
 struct Example {
-	i32 hidden;
+	u32 hidden;
 }
 
 impl {
-	pub func reveal_hidden(ref self) : i32 {
+	pub func reveal_hidden(ref self) : u32 {
 		return self.hidden;
 	}
 }
