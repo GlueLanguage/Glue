@@ -19,28 +19,25 @@ TODO: Add more information
 ## 1. Built-in types
 name | description
 -----|--------------
-int8     | 8-bit signed integer
-int16    | 16-bit signed integer
-int32    | 32-bit signed integer
-int64    | 64-bit signed integer
-int      | alias for int32
-ptr_size | pointer-sized signed integer
+i8     | 8-bit signed integer
+i16    | 16-bit signed integer
+i32    | 32-bit signed integer
+i64    | 64-bit signed integer
+isize  | pointer-sized signed integer
 
 name | description
 -----|--------------
-uint8     | 8-bit unsigned integer
-uint16    | 16-bit unsigned integer
-uint32    | 32-bit unsigned integer
-uint64    | 64-bit unsigned integer
-uint      | alias for uint32
-ptr_usize | pointer-sized unsigned integer
+u8     | 8-bit unsigned integer
+u16    | 16-bit unsigned integer
+u32    | 32-bit unsigned integer
+u64    | 64-bit unsigned integer
+usize  | pointer-sized unsigned integer
 
 name | description
 -----|--------------
-float16 | 16-bit floating point number (IEEE-754)
-float32 | 32-bit floating point number (IEEE-754)
-float64 | 64-bit floating point number (IEEE-754)
-float   | alias for float32
+f16 | 16-bit floating point number (IEEE-754)
+f32 | 32-bit floating point number (IEEE-754)
+f64 | 64-bit floating point number (IEEE-754)
 
 name | description
 -----|--------------
@@ -92,8 +89,8 @@ Code blocks are defined as a list of statements, starting with `{` and ending wi
 Example:
 ```glue
 {
-	int32 a = 8;
-	int32 b = a;
+	i32 a = 8;
+	i32 b = a;
 	a = 5;
 }
 ```
@@ -102,9 +99,9 @@ Code blocks can also be nested inside each other, allowing you to limit scope wh
 Example:
 ```glue
 {
-	int32 a = 8;
+	i32 a = 8;
 	{
-		int32 b = a;
+		i32 b = a;
 	}
 	b = 5; //Not possible, b is out of scope here
 }
@@ -112,7 +109,8 @@ Example:
 
 ## 5. Visibility modifiers
 Everything is private by default, where applicable.
-To make something public, simply specify `public` as the visibility modifier.
+To make something public, simply specify `pub` as the visibility modifier.
+TODO: More visibility modifiers to aid with the import system.
 
 ## 6. Functions
 Function declaration:
@@ -130,11 +128,6 @@ Function calls:
 <func-identifier>([<var-ref>, ..])
 ```
 
-Short-hand *(return is implied)*:
-```
-[visibility-modifier] func <identifier>([<var-type> <identifier>, ..]) : [return-type] -> <expr>;
-```
-
 ## 7. Structs and classes
 Struct syntax + example:
 ```
@@ -145,8 +138,8 @@ Struct syntax + example:
 
 ```glue
 struct Example {
-	int hidden;
-	public int visible;
+	i32 hidden;
+	pub i32 visible;
 }
 ```
 
@@ -163,10 +156,12 @@ Classes are simply structs that have had functions implemented on them. Syntax +
 
 ```glue
 struct Example {
-	int hidden;
+	i32 hidden;
 
 	impl {
-		public func RevealHidden() => self.hidden; //TODO: Think of a way to define if it references or consumes itself (for builder pattern)
+		pub func reveal_hidden(ref self) : i32 {
+			return self.hidden;
+		}
 	}
 }
 ```
