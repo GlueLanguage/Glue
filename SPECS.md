@@ -2,6 +2,7 @@
 Specifications for the Glue language.
 
 ## Table of contents
+0. [Naming conventions and other preferences](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#0)
 1. [Built-in types](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#1-built-in-types)
 2. [Statements](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#2-statements)
 3. [Expressions](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#3-expressions)
@@ -11,29 +12,35 @@ Specifications for the Glue language.
 7. [Structs and classes](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#7-structs-and-classes)
 8. [Conditionals and loops](https://github.com/GlueLanguage/Glue/blob/main/SPECS.md#8-conditionals-and-loops)
 
+## 0. Naming conventions and other preferences
+Although the naming convention used throughout a program is up to the developer, we use a certain naming convention in the std and examples, so we expect this to become an "unofficial" prefered naming convention. We use `snake_case` for function names, and `CamelCase` for struct names, enum names, etc.
+TODO: Add more information
+
 ## 1. Built-in types
 name | description
 -----|--------------
-int8  | 8-bit signed integer
-int16 | 16-bit signed integer
-int32 | 32-bit signed integer
-int64 | 64-bit signed integer
-int   | signed integer *(size defined by compiler flag, default is 32-bit)*
+int8     | 8-bit signed integer
+int16    | 16-bit signed integer
+int32    | 32-bit signed integer
+int64    | 64-bit signed integer
+int      | alias for int32
+ptr_size | pointer-sized signed integer
 
 name | description
 -----|--------------
-uint8  | 8-bit unsigned integer
-uint16 | 16-bit unsigned integer
-uint32 | 32-bit unsigned integer
-uint64 | 64-bit unsigned integer
-uint   | unsigned integer *(size defined by compiler flag, default is 32-bit)*
+uint8     | 8-bit unsigned integer
+uint16    | 16-bit unsigned integer
+uint32    | 32-bit unsigned integer
+uint64    | 64-bit unsigned integer
+uint      | alias for uint32
+ptr_usize | pointer-sized unsigned integer
 
 name | description
 -----|--------------
 float16 | 16-bit floating point number (IEEE-754)
 float32 | 32-bit floating point number (IEEE-754)
 float64 | 64-bit floating point number (IEEE-754)
-float   | floating point number (IEEE-754) *(size defined by compiler flag, default is 32-bit)*
+float   | alias for float32
 
 name | description
 -----|--------------
