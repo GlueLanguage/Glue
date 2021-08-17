@@ -109,6 +109,10 @@ Example:
 
 ## 5. Visibility modifiers
 Everything is private by default, where applicable.
+
+**Private concepts are only accessible in the same file where they were defined, within their defined scope.**
+If something is declared private within a certain scope, such as a code block, or a struct (member/field declaration), then they cannot be used outside that scope, regardless of the file it is in.
+
 To make something public, simply specify `pub` as the visibility modifier.
 TODO: More visibility modifiers to aid with the import system.
 
